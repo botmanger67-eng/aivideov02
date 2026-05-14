@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>AI Video Generator | Pro</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎬 AI Video Studio</h1>
+            <p>Describe your scene, and let the AI craft a short video with voiceover</p>
+        </header>
+
+        <main>
+            <div class="input-section">
+                <textarea id="prompt" placeholder="e.g., A futuristic city with flying cars at sunset, narrated in an inspiring tone" rows="4"></textarea>
+                <button id="generateBtn">✨ Generate Video</button>
+            </div>
+
+            <div id="progressArea" class="progress-area hidden">
+                <div class="progress-bar-container">
+                    <div class="progress-bar" id="progressBar" style="width: 0%"></div>
+                </div>
+                <p id="statusMessage" class="status-message">Processing...</p>
+            </div>
+
+            <div id="resultArea" class="result-area hidden">
+                <h2>Your video is ready!</h2>
+                <video id="previewVideo" controls></video>
+                <a id="downloadLink" class="download-btn" download>⬇️ Download Video</a>
+                <button id="newVideoBtn" class="secondary-btn">+ Create Another Video</button>
+            </div>
+
+            <div id="errorArea" class="error-area hidden">
+                <p>❌ Something went wrong.</p>
+                <button id="retryBtn" class="secondary-btn">Try Again</button>
+            </div>
+        </main>
+
+        <footer>
+            <p>Powered by DeepSeek, Gemini, Pixabay & ElevenLabs | Fallback ready</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+flask
+requests
+moviepy
+elevenlabs
+google-generativeai
+python-dotenv
